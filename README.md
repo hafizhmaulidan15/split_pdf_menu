@@ -1,66 +1,65 @@
-````markdown
-# ✂️ PDF Split Menu  
+# PDF Menu Splitter 🔪
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)](https://www.python.org/)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-[![GitHub Stars](https://img.shields.io/github/stars/hafizhmaulidan15/split_pdf_menu?style=social)](https://github.com/hafizhmaulidan15/split_pdf_menu)  
+<p align="center">
+  <img style="margin-right: 8px;" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img style="margin-right: 8px;" src="https://img.shields.io/badge/PyPDF2-FFD43B?style=for-the-badge&logo=adobeacrobatreader&logoColor=black" alt="PyPDF2">
+</p>
 
-Tool Python sederhana & powerful untuk memisahkan PDF melalui **menu interaktif di terminal**.  
-Dirancang untuk kebutuhan cepat: ambil 1 halaman, rentang, kombinasi, atau bahkan split semua halaman ke file terpisah.  
-
----
-
-## ✨ Fitur
-
-- **📄 Single page** → ambil 1 halaman tertentu.  
-- **📑 Page range** → ambil rentang halaman (mis. `10-15`).  
-- **🗂 Multi select** → gabungan halaman/rentang (mis. `1,3,5-7,12`).  
-- **➗ Single + rest** → 1 file berisi halaman tertentu, 1 file berisi sisanya.  
-- **📚 Split all** → semua halaman otomatis dipisah jadi file PDF terpisah.  
+**PDF Menu Splitter** adalah aplikasi berbasis Python sederhana yang memanfaatkan pustaka **PyPDF2** untuk memisahkan file PDF dengan cepat.  
+Cocok digunakan untuk laporan panjang, dokumen akademik, e-book, atau PDF lain yang perlu dipecah menjadi bagian lebih kecil.  
 
 ---
 
-## 🎥 Demo
+## ✨ Fitur Utama
 
-*(Placeholder – ganti dengan GIF/rekaman terminal lo sendiri)*  
-
-![Demo Split PDF](https://user-images.githubusercontent.com/xxx/demo-split-pdf.gif)
+*   **Ambil Satu Halaman 📄**: Ekstrak 1 halaman tertentu dari PDF.  
+*   **Ambil Rentang Halaman 📑**: Pisahkan beberapa halaman berurutan (misal `10-15`).  
+*   **Multi Seleksi 🗂**: Kombinasi halaman/rentang (misal `1,3,5-7,12`).  
+*   **Halaman + Sisanya ➗**: Simpan halaman tertentu di satu file, sisanya ke file lain.  
+*   **Split Semua 📚**: Pecah seluruh PDF sehingga setiap halaman jadi file PDF terpisah.  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python **3.8+**  
-- [PyPDF2](https://pypi.org/project/PyPDF2/) – library manipulasi PDF  
+*   Python 3.8+  
+*   PyPDF2  
 
 ---
 
-## 🚀 Instalasi
+## 🚀 Instalasi & Menjalankan
 
-1. Clone repo  
+1. Clone repositori:  
    ```bash
-   git clone https://github.com/hafizhmaulidan15/split_pdf_menu.git
+   git clone https://github.com/hafizhmaulidan15/split_pdf_menu
    cd split_pdf_menu
-````
 
-2. Install dependensi
+2. Install dependensi:
 
    ```bash
    pip install PyPDF2
    ```
 
+3. Jalankan aplikasi:
+
+   ```bash
+   python split_pdf_menu.py
+   ```
+
+4. Ikuti instruksi pada terminal:
+
+   * Masukkan path file PDF (contoh: `"D:\Dokumen\laporan.pdf"`)
+   * Pilih opsi (1–5)
+   * Masukkan nomor/rentang halaman sesuai kebutuhan
+
 ---
 
-## ▶️ Cara Menjalankan
+## 📖 Contoh Penggunaan
 
-```bash
-python split_pdf_menu_v2.py
-```
-
-Lalu ikuti menu:
+**Ekstrak halaman 6**
 
 ```
-=== Split PDF (Menu) v2 ===
+=== Split PDF (Menu) ===
 Path PDF sumber: "D:\Dokumen\laporan.pdf"
 Prefix nama file output (default: 'hasil'): output
 📄 Total halaman: 60
@@ -71,45 +70,40 @@ Prefix nama file output (default: 'hasil'): output
 3) Ambil multi seleksi
 4) Ambil 1 halaman + sisanya
 5) Split semua halaman ke file terpisah
-Pilih opsi (1-5):
+Pilih opsi (1-5): 1
+Nomor halaman: 6
+➡️  Akan mengekstrak halaman 6.
+Lanjut eksekusi? [y/N]: y
+✅ Berhasil: output_hal_06.pdf
 ```
 
-* **Opsi 1**: input `6` → hasil `output_hal_06.pdf`
-* **Opsi 2**: input `3-5` → hasil `output_hal_03-05.pdf`
-* **Opsi 3**: input `1,3,5-7` → hasil `output_multi_6hal.pdf`
-* **Opsi 4**: input `6` → hasil `output_hal_06.pdf` & `output_sisa_tanpa_06.pdf`
-* **Opsi 5**: split semua → hasil `output_hal_01.pdf`, `output_hal_02.pdf`, dst.
-
----
-
-## 📂 Struktur Output
+**Split semua halaman →** output:
 
 ```
-📁 .
-├── split_pdf_menu_v2.py
-├── hasil_hal_06.pdf
-├── hasil_hal_03-05.pdf
-├── hasil_multi_6hal.pdf
-├── hasil_sisa_tanpa_06.pdf
-└── hasil_hal_01.pdf ... hasil_hal_N.pdf
+output_hal_01.pdf, output_hal_02.pdf, ... output_hal_60.pdf
 ```
 
 ---
 
 ## 🤝 Kontribusi
 
-1. Fork repo
-2. Buat branch baru → `git checkout -b feature/nama-fitur`
-3. Commit perubahan → `git commit -m "feat: tambah opsi baru"`
-4. Push → `git push origin feature/nama-fitur`
-5. Buka Pull Request
+Kontribusi sangat terbuka!
 
----
+1. Fork repo ini
+2. Buat branch fitur baru:
 
-## 📄 Lisensi
+   ```bash
+   git checkout -b feature/nama-fitur
+   ```
+3. Commit perubahan Anda:
 
-Dirilis di bawah [MIT License](LICENSE).
-Bebas digunakan, dimodifikasi, & dibagikan.
+   ```bash
+   git commit -m "feat: tambahkan fitur baru"
+   ```
+4. Push ke branch:
 
-```
-```
+   ```bash
+   git push origin feature/nama-fitur
+   ```
+5. Buat Pull Request
+
